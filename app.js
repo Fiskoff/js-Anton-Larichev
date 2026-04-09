@@ -1,6 +1,19 @@
-// Булевы операторы && || !
+// Обычная функция
+function powerOfTwo(number) {
+  return number * number;
+}
 
-// Оператор нулевого слияния
-// Если userName null или undefined, то выведет 'Нет имени', во всех других случаях выведет userName
-const userName = null;
-console.log(userName ?? 'Нет имени');
+
+// Анонимная функция, используется там, где объявлена(в одной области видимости)
+const powerOfTwoNotName = function(number) {
+  return number * number;
+};
+
+
+// стрелочные функции, аргументы  => результат
+const powerOfTwoArrow = number => number * number;
+// или
+const powerOfTwoArrow2 = (number, i) => {
+    console.log(i);
+    return number * number
+};
