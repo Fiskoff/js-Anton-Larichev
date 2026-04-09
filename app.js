@@ -1,23 +1,42 @@
-// Объекты(изменяемые) и примитивы(не изменяемые)
-// Примитивные типы: числа, строки, логический тип, null(намеренное отсутствие значения), undefined(значение ещё не присвоено), Symbol(уникальное неизменяемое значение)
+const money = 100
+const canBuy = money > 50
 
 
 
-const projectName = 'Internet Store';
-const price = 2000;
-// Шаблонная строка
-const fullString = `Проект: ${projectName} - цена: ${price}`
+if (canBuy) {
+	console.log('I can buy a car')
+} else if (money > 25) {
+	console.log('I can buy a bike')
+} else {
+	console.log("I can't buy anything")
+}
 
 
 
-// Конвертация типов
-const age = '18'
-const ageNumber = Number(age)
-const ageString = String(ageNumber)
 
-// false
-const valFalse1 = Boolean(0)
-const valFalse2 = Boolean('')
-const valFalse3 = Boolean(null)
-const valFalse4 = Boolean(undefined)
-const valFalse5 = Boolean(NaN)  // или Boolean(Number("age"))
+// не строгое равенство(==) проверяет только значение, строгое равенство(===) проверяет и тип и значение
+const valTrue = '7' == 7
+const valFalse = '7' === 7
+
+const role = 'admin'
+
+switch (role) {
+	case 'guest':
+		console.log('Guest user')
+		break
+	case 'moderator':
+		console.log('Moderator user')
+		break
+    // можно использовать несколько случаев
+	case 'admin':
+	case 'admin +':
+		console.log('Admin user')
+		break
+	default:
+		console.log('Unknown user')
+}
+
+
+
+// Тернарный оператор
+10  > 5 ? console.log('Yes') : console.log('No')
