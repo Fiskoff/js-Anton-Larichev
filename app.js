@@ -1,25 +1,9 @@
-// Объект
-const user = {
-	name: 'Sergey',
-	surname: 'Fiskov',
-	age: 23,
-	skills: ['HTML', 'CSS', 'JS'],
-	// Метод объекта
-	getFullName() {
-		return `${this.name} ${this.surname}`  // this - ссылка на объект user
-	},
-}
+// JS - jit компилируемый язык. Исходный код построчно компилируется в машинный код и сразу выполняется, после этого переходит к другой строчке
 
-const userName = user.name
-const userFirstSkills = user.skills[0]
-const userFullName = user.getFullName()
+// JS - однопоточный. Главная задача, не блокировать основной поток. Все фоновые задачи передаются в event loop
 
-// Итерироваться только по ключам объекта
-for (let key in user) {
-	console.log(key)
-}
+// Движок - исполняет js код в браузере
+// Движок содержит в себе: 
+//          - Call Stack - стэк вызов функций, примитивные типы, ссылки на объекты в куче (контекст исполнения)
+//          - Heap - куча, массивы и объекты (хранит объекты в памяти)
 
-// Деструктуризация объекта
-const {surname, ...uerWithoutSurname} = user
-console.log(surname)  // Значение фамилии
-console.log(uerWithoutSurname)  // Всё остальное кроме фамилии
