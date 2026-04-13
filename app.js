@@ -1,34 +1,44 @@
-// Функция первого класса - функция которую можно использовать как переменную 
-// Функция высшего порядка - функция которая принимает функцию в качестве аргумента или возвращает функцию
+// Итерирование по массиву
+const score = [5, 0, 6, 15];
 
-const a = (b) => b++  // Функция первого класса
-
-function g(a){  // Функция высшего порядка. Функция которая передаётся как аргумент, называется callback функцией
-    return a
+for (const [i, el] of score.entries()) {  // entries() - возвращает массив состоящий из индекса и элемента под этим индексом
+	console.log(`Раунд ${i + 1}: ${el}`)
 }
 
-
-const add = (a, b) => a + b 
-const sub = (a, b) => a - b
- // Функция высшего уровня позволяет обстрагиваться от реализации 
-function calc(a, b, callback){ 
-    return callback(a, b)
-}
-
-console.log(calc(2, 2, add))
-console.log(calc(10, 5, sub))
+// Более короткая запись. forEach - функция высшего порядка частичная замена обычного for цикла
+const iterScore = score.forEach((scoreEl, i) => console.log(`Раунд ${i + 1}: ${scoreEl}`));
 
 
 
-//Замыкание -  это функция, которая сохраняет доступ к переменным своей внешней (родительской) области видимости, даже после завершения работы этой внешней функции.
-function power(pow){
-    return function(num){
-        return num  ** pow
-    }
-}
+// Перебор массива и создание нового. Функция map() возвращает новый массив
+const transactionInUSD = [5, 3, -4, 15];
+const transactionInRUB = transactionInUSD.map(
+    (transactionEl) => transactionEl * 76
+);
 
-const powerTwo = power(2)  // Замыкание, переменная powerTwo хранит в себе функцию power(2)
-console.log(powerTwo(9))  // Вызываем анонимную функцию которую возвращает функция power
-console.log(powerTwo(11))
+// Перебор массива и создание нового на основе старого, где значения больше нуля
+const positiveOperations = transactionInUSD.filter(
+    (transactionEl) => transactionEl > 0
+);
 
-// Замыкание - это когда функция «запоминает» переменные из места, где она была создана, и может пользоваться ими позже — даже если вызывается в другом месте.
+// Объединение двух map и filter
+operations = [100, -20, 7, -20, 50]
+const positiveRUBOperations = operations
+	.filter(transactionEl => transactionEl > 0)
+	.map(transactionEl => transactionEl * 76)
+
+console.log(positiveRUBOperations);
+
+
+
+// find и findindex - возвращает элемент / индекс первого вхождения, который удовлетворяет условие collback функции
+const transactions = [5, 3, -4, 15, 20, 7, -20, 50];
+
+const firstPositiveTransaction = transactions.find(transactionEl => transactionEl < 0);
+const firstPositiveTransactionIndex = transactions.findIndex(transactionEl => transactionEl < 0);
+
+
+
+// flat  - возвращает новый массив, c пониженный вложенностью
+const arr = [[1, 2], [3, 4], [5, 6]];
+const flatArr = arr.flat();  // [1, 2, 3, 4, 5, 6]
