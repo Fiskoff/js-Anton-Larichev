@@ -1,20 +1,9 @@
 'use strict'
 
-function changeClick() {
-    const input = document.querySelector('.input-text').value;
-    document.querySelector('.panel').innerText = input;
-    document.querySelector(".input-text").value = "";
+// Добавление html кода в DOM
 
-    document.querySelector('.notification').style.display = "block";
-    document.querySelector('.notification').classList.add('notification_active')
+const newElement = document.createElement('button');  // Создание элемента
+newElement.classList.add('input-btn')  // Добавление класса
+newElement.innerHTML = "<span>Click me</span>"  // Добавление html тегов в новый объект
+document.querySelector(".test").appendChild(newElement)  // Добавляем элемент в DOM
 
-    // Получить все атрибуты, в данном случае, атрибуты класса
-    const allAtr = document.querySelector('.notification').getAttribute('class')
-};
-
-document.querySelector('.input-btn').addEventListener('click', changeClick);
-document.querySelector('.input-text').addEventListener('keydown', e => {  // e - event хранит всю информацию о событии
-	if (e.code == 'Enter') {
-		changeClick()
-	}
-});

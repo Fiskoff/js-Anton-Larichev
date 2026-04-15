@@ -20,3 +20,11 @@ body {
 .notification_active{
     display: block;
 }
+
+.input-btn{
+    background-color: #2a1c6f;
+    border: 1px, solid, #13074d;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 6px;
+}
