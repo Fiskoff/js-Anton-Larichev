@@ -1,9 +1,13 @@
 'use strict'
 
-// Добавление html кода в DOM
+// Поместить значение в локальное хранилище
+localStorage.setItem("token", "ewdfwefweff32e23e3d23d23e31")
 
-const newElement = document.createElement('button');  // Создание элемента
-newElement.classList.add('input-btn')  // Добавление класса
-newElement.innerHTML = "<span>Click me</span>"  // Добавление html тегов в новый объект
-document.querySelector(".test").appendChild(newElement)  // Добавляем элемент в DOM
+// Получить значение в локальное хранилище
+const token = localStorage.getItem("token")
 
+// Удалить ключ в локальном  хранилище
+localStorage.removeItem("token")
+
+// Очистить локальное хранилище
+localStorage.clear()
