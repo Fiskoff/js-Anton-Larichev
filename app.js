@@ -6,5 +6,10 @@ function changeClick() {
     document.querySelector(".input-text").value = "";
 };
 
-// через querySelector обращаемся к элементу, addEventListener обработчик событий
+
 document.querySelector('.input-btn').addEventListener('click', changeClick);
+document.querySelector('.input-text').addEventListener('keydown', e => {  // e - event хранит всю информацию о событии
+	if (e.code == 'Enter') {
+		changeClick()
+	}
+});
