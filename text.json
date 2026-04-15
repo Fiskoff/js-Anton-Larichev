@@ -1,0 +1,9 @@
+{
+    "key": "value",
+    "num": 2,
+    "bool": true,
+    "arr": [1, 2, 3],
+    "obj": {
+        "key": "value"
+    }
+}
